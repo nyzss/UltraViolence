@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1krfc4t0e26h"]
+
+[ext_resource type="Script" path="res://Scenes/Player/Player.cs" id="1_oq837"]
+[ext_resource type="Texture2D" uid="uid://cvdv7i1f656bk" path="res://Scenes/Player/player.png" id="1_rigj7"]
+[ext_resource type="PackedScene" uid="uid://r6gct5b2qxfe" path="res://Scenes/Ability/HammerAbility/HammerAbilityController.tscn" id="3_6vx74"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vkj0e"]
+radius = 5.0
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+script = ExtResource("1_oq837")
+Speed = 150
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rigj7")
+offset = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_vkj0e")
+
+[node name="AbilityManager" type="Node" parent="."]
+
+[node name="HammerAbilityController" parent="AbilityManager" instance=ExtResource("3_6vx74")]

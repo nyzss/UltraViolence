@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://r6gct5b2qxfe"]
+
+[ext_resource type="Script" path="res://Scenes/Ability/HammerAbility/HammerAbilityController.cs" id="1_hgpnk"]
+[ext_resource type="PackedScene" uid="uid://rw4xy5b1omi5" path="res://Scenes/Ability/HammerAbility/HammerAbility.tscn" id="2_rxqg8"]
+
+[node name="HammerAbilityController" type="Node"]
+script = ExtResource("1_hgpnk")
+HammerAbility = ExtResource("2_rxqg8")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
